@@ -6,24 +6,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa'
 type Props = {}
 
 const Hero = (props: Props) => {
-  const handleGoogleLogin = () => {
-    console.log('Google login clicked')
-    // Add your Kinde Google OAuth logic here
-    // Example: window.location.href = kindeGoogleLoginUrl
-  }
-
-  const handleGithubLogin = () => {
-    console.log('GitHub login clicked')
-    // Add your Kinde GitHub OAuth logic here
-    // Example: window.location.href = kindeGithubLoginUrl
-  }
-
-  const handleSignup = () => {
-    console.log('Sign up clicked')
-    // Add your Kinde signup logic here
-    // Example: window.location.href = kindeSignupUrl
-  }
-
+ 
   return (
     <section className='relative min-h-screen bg-black overflow-hidden pt-32 md:pt-40'>
     
@@ -85,7 +68,7 @@ const Hero = (props: Props) => {
                 
                 <div className='space-y-4'>
                   <button
-                    onClick={handleSignup}
+                   
                     className='w-full px-4 py-4 cursor-pointer rounded-lg bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold transition-all duration-300 shadow-lg shadow-red-600/50 hover:shadow-red-600/70 active:scale-95'
                   >
                     Sign Up for Free
@@ -97,7 +80,7 @@ const Hero = (props: Props) => {
                 </div>
               </div>
 
-              {/* Trust Badges */}
+              
               <div className='flex items-center justify-center gap-4 text-sm text-gray-400 mt-6'>
                 <span className='text-yellow-500'>★★★★★</span>
                 <span>4.9/5 • Trusted by 50K+ users</span>
