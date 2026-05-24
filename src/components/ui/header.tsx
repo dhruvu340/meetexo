@@ -19,7 +19,7 @@ const Header = (props: Props) => {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b border-red-900/30 backdrop-blur-lg bg-black/95'>
+    <header className='fixed top-0 left-0 right-0 z-50 w-full border-b border-red-900/30 backdrop-blur-lg bg-black/95'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16 md:h-20'>
           
@@ -62,21 +62,32 @@ const Header = (props: Props) => {
          
           <button
             onClick={toggleMenu}
-            className='md:hidden p-2 rounded-lg hover:bg-red-950/40 transition-colors duration-200'
+            className='md:hidden cursor-pointer p-2 rounded-lg hover:bg-red-950/40 transition-colors duration-200'
             aria-label='Toggle menu'
             aria-expanded={isOpen}
           >
-            {isOpen ? (
-              <X className='w-6 h-6 text-red-500' />
-            ) : (
-              <Menu className='w-6 h-6 text-gray-300' />
-            )}
+            <div className='relative w-6 h-6 flex items-center justify-center'>
+              <Menu
+                className={`absolute w-6 h-6 text-gray-300 transition-all duration-300 ${
+                  isOpen ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
+                }`}
+              />
+              <X
+                className={`absolute w-6 h-6 text-red-500 transition-all duration-300 ${
+                  isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                }`}
+              />
+            </div>
           </button>
         </div>
 
         
-        {isOpen && (
-          <nav className='md:hidden pb-4 border-t border-red-900/30'>
+        <nav
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className='border-t border-red-900/30 pb-4'>
             <div className='flex flex-col space-y-1 pt-4'>
               {navItems.map((item) => (
                 <a
@@ -100,8 +111,8 @@ const Header = (props: Props) => {
                 </Button>
               </div>
             </div>
-          </nav>
-        )}
+          </div>
+        </nav>
       </div>
 
       
