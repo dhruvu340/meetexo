@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Button } from './button'
 import { Menu, X } from 'lucide-react'
+import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
 
 type Props = {}
 
@@ -48,15 +49,19 @@ const Header = (props: Props) => {
 
           
           <div className='hidden md:flex items-center gap-3'>
-            <Button
+            <LoginLink>
+              <Button
               variant='ghost'
               className='text-gray-300 text-xl hover:text-red-500 cursor-pointer hover:bg-red-950/30 transition-colors duration-200'
             >
               Login
             </Button>
-            <Button className='bg-red-600 text-xl p-7 cursor-pointer hover:bg-red-700 text-white shadow-lg shadow-red-600/40 hover:shadow-red-600/60 transition-all duration-200'>
+            </LoginLink>
+            <RegisterLink>
+              <Button className='bg-red-600 text-xl p-7 cursor-pointer hover:bg-red-700 text-white shadow-lg shadow-red-600/40 hover:shadow-red-600/60 transition-all duration-200'>
               Get Started
             </Button>
+            </RegisterLink>
           </div>
 
          
@@ -100,15 +105,19 @@ const Header = (props: Props) => {
                 </a>
               ))}
               <div className='flex flex-col gap-2 pt-4 border-t border-red-900/30'>
-                <Button
+                <LoginLink>
+                  <Button
                   variant='ghost'
                   className='w-full justify-center text-gray-300 hover:bg-red-950/40 hover:text-red-500'
                 >
                   Login
                 </Button>
-                <Button className='w-full justify-center bg-red-600 hover:bg-red-700 text-white'>
+                </LoginLink>
+                <RegisterLink>
+                  <Button className='w-full justify-center bg-red-600 hover:bg-red-700 text-white'>
                   Get Started
                 </Button>
+                </RegisterLink>
               </div>
             </div>
           </div>

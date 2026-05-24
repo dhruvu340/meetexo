@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
-import { FaGoogle, FaGithub } from 'react-icons/fa'
+import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
+
 
 type Props = {}
 
@@ -67,12 +67,14 @@ const Hero = (props: Props) => {
 
                 
                 <div className='space-y-4'>
-                  <button
+                  <RegisterLink>
+                    <button
                    
                     className='w-full px-4 py-4 cursor-pointer rounded-lg bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold transition-all duration-300 shadow-lg shadow-red-600/50 hover:shadow-red-600/70 active:scale-95'
                   >
                     Sign Up for Free
                   </button>
+                  </RegisterLink>
 
                   
 
