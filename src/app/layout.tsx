@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Merriweather, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const fontSans = Space_Grotesk({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} antialiased`}>
-        {children}
+        <Toaster/>{children}
       </body>
     </html>
   );
