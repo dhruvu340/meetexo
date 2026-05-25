@@ -10,6 +10,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import MeetingType from "./meeting-type/page";
 
 const DashBoard = () => {
   const [loading, setLoading] = useState(true);
@@ -59,9 +60,7 @@ const DashBoard = () => {
     <div>
       DashBoard
 
-      <LogoutLink>
-        <Button>Logout</Button>
-      </LogoutLink>
+      <MeetingType/>
     </div>
   );
 };
