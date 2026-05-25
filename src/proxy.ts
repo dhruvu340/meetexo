@@ -1,12 +1,8 @@
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
-
 import { NextRequest, NextResponse } from 'next/server'
-
- 
-
 export async function proxy(request: NextRequest) {
     const {isAuthenticated} = getKindeServerSession();
-    const isLoggedin=await isAuthenticated();
+    const isLoggedin = await isAuthenticated();
     const path=request.nextUrl.pathname;
     if(isLoggedin&&path==="/"){
          return NextResponse.redirect(new URL("/dashboard",request.url));
@@ -16,9 +12,7 @@ export async function proxy(request: NextRequest) {
     }
     return NextResponse.next();
 }
- 
 
- 
 export const config = {
   matcher: ["/",'/dashboard/:path*'],
 }
