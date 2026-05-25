@@ -49,10 +49,10 @@ const CreateBusiness = (props: Props) => {
 
       setBusinessName('')
       
-      // Redirect after a short delay to show the toast
-      setTimeout(() => {
+      
+      
         router.replace('/dashboard')
-      }, 1500)
+      
     } catch (err) {
       toast.error('Failed to create business', {
         description: 'Please check your information and try again.',
@@ -65,14 +65,14 @@ const CreateBusiness = (props: Props) => {
 
   return (
     <section className='relative min-h-screen bg-black overflow-hidden pt-32 md:pt-40'>
-      {/* Animated Background */}
+      
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-20 left-10 w-80 h-80 bg-red-600/20 rounded-full blur-3xl animate-pulse'></div>
         <div className='absolute bottom-20 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse' style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className='relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
-        {/* Header */}
+        
         <div className='mb-12 text-center'>
           <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-950/30 border border-red-900/50 mb-6'>
             <span className='relative flex h-2 w-2'>
@@ -94,7 +94,7 @@ const CreateBusiness = (props: Props) => {
           </p>
         </div>
 
-        {/* Form Container */}
+       
         <div className='rounded-2xl bg-gradient-to-br from-gray-900/80 to-black/80 border border-red-900/30 backdrop-blur-xl p-8 md:p-12 shadow-2xl max-w-2xl mx-auto'>
           <form onSubmit={handleSubmit} className='space-y-8'>
             <div>
@@ -129,7 +129,7 @@ const CreateBusiness = (props: Props) => {
             </button>
           </form>
 
-          {/* Trust Badge */}
+         
           <div className='flex items-center justify-center gap-4 text-sm text-gray-400 mt-8 pt-8 border-t border-gray-700/30'>
             <span className='text-yellow-500'>★★★★★</span>
             <span>Trusted by 50K+ users worldwide</span>
