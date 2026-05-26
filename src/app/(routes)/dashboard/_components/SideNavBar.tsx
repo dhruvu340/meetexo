@@ -80,7 +80,7 @@ const SideNavBar = ({ isOpen = false, onClose }: Props) => {
 
             
             <div className='px-4 pb-4 sm:pb-6'>
-                <Link href="/dashboard/meeting-type" onClick={handleNavClick}>
+                <Link href="/create-meeting" onClick={handleNavClick}>
                     <Button className='w-full cursor-pointer bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-5 sm:py-6 rounded-xl transition-all duration-300 shadow-lg shadow-red-600/50 hover:shadow-red-600/70 active:scale-95 flex items-center justify-center gap-2 group'>
                         <Plus className='w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-90 transition-transform duration-300' /> 
                         <span className='text-sm sm:text-base'>Create Meeting</span>
