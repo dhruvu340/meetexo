@@ -1,10 +1,16 @@
+
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images:{
-    domains:['lh3.googleusercontent.com']
-  }
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn-icons-png.flaticon.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

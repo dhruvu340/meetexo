@@ -1,9 +1,25 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import MeetingForm from './_components/meetingform'
 
 type Props = {}
-
+type FormData = {
+  eventName: string;
+  duration: string;
+  location: string;
+  locationUrl: string;
+  themeColor: string;
+};
 const Page = (props: Props) => {
+  
+
+const [formValue, setFormValue] = useState<FormData>({
+  eventName: "",
+  duration: "",
+  location: "",
+  locationUrl: "",
+  themeColor: "#FF555D",
+});
   return (
     <div className='w-full min-h-screen bg-gradient-to-br from-black via-gray-950 to-black'>
       
@@ -16,7 +32,7 @@ const Page = (props: Props) => {
         
         
         <div className='w-full lg:w-[50%] p-4 sm:p-6 lg:p-8 order-1 lg:order-1 overflow-y-auto no-scrollbar'>
-          <MeetingForm />
+          <MeetingForm setFormValue={setFormValue} />
         </div>
 
         
